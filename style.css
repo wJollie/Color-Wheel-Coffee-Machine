@@ -1,0 +1,131 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+
+body{
+  font-family: Open Sans;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url(Background.png);
+  background-size: 1390px, 1390px;
+  background-repeat: no-repeat;
+}
+
+.mainbox{
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.mainbox:after{
+  position: absolute;
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: url('arrow-left.png') no-repeat;
+  background-size: 32px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 75%;
+  border: 10px solid #fff;
+  overflow: hidden;
+  transition: all ease 5s;
+}
+span{
+  width: 75%;
+  height: 50%;
+  display: inline-block;
+  position: absolute;
+}
+.span1{
+  clip-path: polygon(100% 19%, 61% 100%, 0 16%);
+  background-color: #FFE600;
+  top: 120px;
+  left: -75;
+}
+.box2 .span1{
+  clip-path: polygon(100% 19%, 61% 100%, 0 16%);
+  background-color: #68E019;
+  top: 120px;
+  left: -75;
+  }
+.span2{
+  clip-path: polygon(0 13%, 35% 100%, 100% 0);
+  background-color: #FF9700;
+  top: 120px;
+  right: -75px;
+}
+.box2 .span2{
+  clip-path: polygon(0 9%, 34% 100%, 100% 7%);
+  background-color: #FF009E;
+  top: 120px;
+  right: -75px;
+}
+.span3{
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+  background-color: #00AAFF;
+  bottom: 0;
+  left: 35px;
+}
+.box2 .span3{
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+  background-color: #9500FF;
+  bottom: 0;
+  left: 35px;
+}
+.box2{
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+span b{
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.spin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #001aff;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+}
+.spin:active{
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after{
+  animation: animateArrow 0.7s ease infinite;
+}
+@keyframes animateArrow{
+  50%{
+    right: -40px;
+  }
+}
